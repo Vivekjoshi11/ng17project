@@ -11,4 +11,9 @@ export class UserProfileComponent {
   name:string = "vivek"
   job:string = " software Engineer"
   salary:number = 120000
-}
+  isButtonDisabled = true
+
+  onchange(){
+   console.log('called')
+  }
+};
