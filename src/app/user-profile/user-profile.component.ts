@@ -1,8 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { booleanAttribute, Component, input, Input, numberAttribute } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import   
  { CommonModule } from '@angular/common';
 
+ function formatName(value:string){
+ return "Hi "+ value
+ }
 @Component({
   selector: 'app-user-profile',
   standalone: true,
@@ -15,7 +18,10 @@ import  
 export class UserProfileComponent {
 
 
-  @Input() name = ""
+  // @Input() name = ""
+  @Input({alias:"userName", transform:formatName}) name ="";
+  @Input({transform:booleanAttribute}) isSingle!:boolean;
+  @Input({transform:numberAttribute}) salary!:number;
 
   // name:string = "vivek"
   // job:string = " software Engineer"

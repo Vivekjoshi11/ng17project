@@ -1,5 +1,13 @@
 <h1>main component</h1>
 
 <!-- u can pass name into the component using this -->
-<app-user-profile name="vivek"></app-user-profile>
-<app-user-profile name="vicky"></app-user-profile>
+
+<app-user-profile 
+ *ngFor = "let u of users"
+ [userName] = "u.name"
+ [isSingle] = "u.isSingle"
+ [salary] = "u.salary"
+
+></app-user-profile>
+<!-- <app-user-profile name="vivek"></app-user-profile>
+<app-user-profile name="vicky"></app-user-profile> -->
