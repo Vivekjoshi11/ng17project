@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, input, Input, numberAttribute } from '@angular/core';
+import { booleanAttribute, Component, EventEmitter, input, Input, numberAttribute, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import   
  { CommonModule } from '@angular/common';
@@ -19,9 +19,15 @@ export class UserProfileComponent {
 
 
   // @Input() name = ""
-  @Input({alias:"userName", transform:formatName}) name ="";
+  @Input({alias:"userName", transform:formatName}) name ="";   // alias is used when our variable is in other file is different 
+  // and here transform is the built in angular format which will transform it's variable name and here it will go to that function
   @Input({transform:booleanAttribute}) isSingle!:boolean;
+  //this transform function will convert string into that perticular data type
   @Input({transform:numberAttribute}) salary!:number;
+  @Output() myEvent = new EventEmitter<string>()  // this will used to send data from child to parent here parent is app and child is user-profile
+  sendData(){
+    this.myEvent.emit("Coders never quit")
+  }
 
   // name:string = "vivek"
   // job:string = " software Engineer"

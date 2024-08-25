@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, isSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { CommonModule } from '@angular/common';
@@ -15,7 +15,7 @@ export class AppComponent {
   users = [
     {name:"ramesh",
       isSingle: true,
-      salary:10000
+      salary:10000,
     },
     {name:"vicky",
       isSingle: true,
@@ -26,4 +26,7 @@ export class AppComponent {
       salary:100000
     }
   ]
+  recevedData(e:string){
+    console.log(e);
+  }
 }
