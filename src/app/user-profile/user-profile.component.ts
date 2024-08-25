@@ -29,6 +29,8 @@ export class UserProfileComponent {
     this.myEvent.emit("Coders never quit")
   }
 
+
+  
   // name:string = "vivek"
   // job:string = " software Engineer"
   // salary:number = 120000
