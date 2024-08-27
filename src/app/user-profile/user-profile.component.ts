@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import   
  { CommonModule } from '@angular/common';
 import { User } from '../../models/users';
+import { CountryCodePipe } from "../pipes/country-code.pipe";
 
  function formatName(value:string){
  return "Hi "+ value
@@ -11,8 +12,7 @@ import { User } from '../../models/users';
   selector: 'app-user-profile',
   standalone: true,
   imports: [FormsModule,
-    CommonModule
-  ],
+    CommonModule, CountryCodePipe],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })
@@ -30,35 +30,36 @@ export class UserProfileComponent {
   sendData(){
     this.myEvent.emit({name:this.name, newSalary:250000});
   }
-
+bgColor = "blue";
 
   
   // name:string = "vivek"
-  job:string = " software Engineer"
+  // job:string = " software Engineer"
   // salary:number = 120000
-  isButtonDisabled = true
-  inputVal = "test"
+  // isButtonDisabled = true
+  // inputVal = "test"
+  // phoneno = 1345678920
 
 
-  users = [
-    {name:"ramesh",
-      isSingle: true,
-      salary:10000
-    },
-    {name:"vicky",
-      isSingle: true,
-      salary:500000
-    },
-    {name:"jack",
-      isSingle: false,
-      salary:100000
-    }
-  ]
+  // users = [
+  //   {name:"ramesh",
+  //     isSingle: true,
+  //     salary:10000
+  //   },
+  //   {name:"vicky",
+  //     isSingle: true,
+  //     salary:500000
+  //   },
+  //   {name:"jack",
+  //     isSingle: false,
+  //     salary:100000
+  //   }
+  // ]
 
-  onchange(e:Event){
-    const value = (e.target as HTMLInputElement).value
-    this.inputVal = value
-   console.log(value)
-  }
+  // onchange(e:Event){
+  //   const value = (e.target as HTMLInputElement).value
+  //   this.inputVal = value
+  //  console.log(value)
+  // }
 
 };
