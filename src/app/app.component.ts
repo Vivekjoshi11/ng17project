@@ -2,6 +2,7 @@ import { Component, isSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { CommonModule } from '@angular/common';
+import { User } from '../models/users';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,9 @@ export class AppComponent {
       salary:100000
     }
   ]
-  recevedData(e:string){
+  recevedData(e:User){
     console.log(e);
+    const userIndex = this.users.findIndex(user=>user.name == e.name)
+    this.users[userIndex].salary = e.newSalary
   }
 }

@@ -1,13 +1,13 @@
-<!-- <p>user-profile works!</p>
+<p>user-profile works!</p>
 <h4>Name - {{name}} job - {{job}} - {{salary}} </h4>
 
 <h1>{{inputVal}} </h1> -->
-<!-- <button [disabled] ="isButtonDisabled">click me</button> -->
-<!-- <input type="text" [value]="inputVal" (input)="onchange($event)"> -->
-<!-- <input type="text" [(ngModel)] = "inputVal">  attribute dirctive -->
+<button [disabled] ="isButtonDisabled">click me</button> -->
+<input type="text" [value]="inputVal" (input)="onchange($event)">
+<input type="text" [(ngModel)] = "inputVal">  attribute dirctive
  
 <!-- control flow -->
- <!-- <p>control flow</p>
+ <p>control flow</p>
 
 <div>
     @for (user of users; track user.name) {
@@ -19,21 +19,21 @@
         }
        
     }
-</div> -->
+</div>
 
-<!-- <hr>
+<hr>
 <p> directives </p>
-  -->
-<!-- structurel directives it changes structure of html  -->
-<!-- <div *ngFor="let user of users">
+ 
+structurel directives it changes structure of html 
+ <div *ngFor="let user of users"> 
    
         <h4 *ngIf="user.salary>10000; else elseblock">Name - {{user.name}} Status - {{user.isSingle?"single":"coder"}} salary - {{user.salary}} </h4>
         <ng-template #elseblock>
-            <h4>Name - {{user.name}} Status - hidden </h4>
+            <h4>Name - {{user.name}} Status - hidden </h4> 
         </ng-template>
-</div> -->
+</div>
 
 
 
-<h1> Name - {{name}} </h1>
+<h1> Name - {{name}} salary - {{salary}} status - {{isSingle}} </h1>
 <button (click)="sendData()"> send data</button>
