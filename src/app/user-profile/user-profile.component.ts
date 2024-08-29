@@ -4,6 +4,7 @@ import  
  { CommonModule } from '@angular/common';
 import { User } from '../../models/users';
 import { CountryCodePipe } from "../pipes/country-code.pipe";
+import { HighlightDirective } from '../directives/highlight.directive';
 
  function formatName(value:string){
  return "Hi "+ value
@@ -12,7 +13,7 @@ import { CountryCodePipe } from "../pipes/country-code.pipe";
   selector: 'app-user-profile',
   standalone: true,
   imports: [FormsModule,
-    CommonModule, CountryCodePipe],
+    CommonModule, CountryCodePipe, HighlightDirective],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })
