@@ -12,7 +12,7 @@ export class HighlightDirective {
   // constructor(el:ElementRef) {
   //   this.el = el;
   //  }
-  // or you can write with this two type
+  // or you can write with this two type from this public modifire you can use in anywhere don't need to describe 
    constructor(public el:ElementRef){
 
    }
