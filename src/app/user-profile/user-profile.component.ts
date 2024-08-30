@@ -1,4 +1,4 @@
-import { booleanAttribute, Component, EventEmitter, input, Input, numberAttribute, Output } from '@angular/core';
+import { booleanAttribute, Component, ElementRef, EventEmitter, input, Input, numberAttribute, Output, SimpleChange, ViewChild, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import   
  { CommonModule } from '@angular/common';
@@ -31,8 +31,48 @@ export class UserProfileComponent {
   sendData(){
     this.myEvent.emit({name:this.name, newSalary:250000});
   }
-bgColor = "blue";
 
+ 
+  //lifecycle methods
+  //1st method is constructor will call only once
+
+
+  @ViewChild("myheading") heading?:ElementRef
+
+
+  constructor() {
+    //init properties
+    //dependency injection
+    //event listener register
+    console.log("constructor called")
+   }
+
+   ngOnChanges(changes: SimpleChange): void{
+    //when input property change this will call
+    console.log("ngOnChanges",changes)
+    
+   }
+
+   //2nd ng oninit this also called once
+   ngOnInit(){
+     //init properties
+    // initial api call
+    //event listener register
+    console.log("ngOnInit called", this.name)
+    
+   }
+   ngAfterViewInit(): void{
+    //it will called once content is ready to show on UI
+    console.log("ngafterviewInit called", this.heading?.nativeElement.textContent)
+   }
+  
+   ngOnDestroy(){
+    // unregister event listner
+    console.log('component destroy')
+    
+   }
+
+   
   
   // name:string = "vivek"
   // job:string = " software Engineer"
