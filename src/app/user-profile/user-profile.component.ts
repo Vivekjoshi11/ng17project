@@ -21,7 +21,10 @@ export class UserProfileComponent {
 
 
   // @Input() name = ""
-  @Input({alias:"userName"}) name ="";
+  // @Input({alias:"userName"}) name ="";
+  name = input("",{
+    alias:"userName",
+  })
   // @Input({alias:"userName", transform:formatName}) name ="";   // alias is used when our variable is in other file is different 
   // and here transform is the built in angular format which will transform it's variable name and here it will go to that function
   @Input({transform:booleanAttribute}) isSingle!:boolean;
@@ -29,7 +32,7 @@ export class UserProfileComponent {
   @Input({transform:numberAttribute}) salary!:number;
   @Output() myEvent = new EventEmitter<User>()  // this will used to send data from child to parent here parent is app and child is user-profile
   sendData(){
-    this.myEvent.emit({name:this.name, newSalary:250000});
+    this.myEvent.emit({name:this.name(), newSalary:250000});
   }
 
  
@@ -58,7 +61,7 @@ export class UserProfileComponent {
      //init properties
     // initial api call
     //event listener register
-    console.log("ngOnInit called", this.name)
+    console.log("ngOnInit called", this.name())
     
    }
    ngAfterViewInit(): void{
