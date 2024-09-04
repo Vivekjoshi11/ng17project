@@ -1,7 +1,6 @@
 import { booleanAttribute, Component, ElementRef, EventEmitter, input, Input, numberAttribute, Output, SimpleChange, ViewChild, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import   
- { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { User } from '../../models/users';
 import { CountryCodePipe } from "../pipes/country-code.pipe";
 import { HighlightDirective } from '../directives/highlight.directive';
